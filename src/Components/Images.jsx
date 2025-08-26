@@ -70,40 +70,63 @@ const Images = () => {
     }, []);
 
   return (
-    <div className="images-section w-full h-[70vh] sm:h-[180vh] overflow-hidden flex items-center justify-center">
-      <div className="relative w-1/3 sm:w-1/4 h-1/2">
-        {position.map((item, index) => {
-          return (
-            <div
-              className={`images absolute ${item.height} ${item.width} ${item.top} ${item.right}`}
-              id={index}
-              key={index}
-            >
-              {item.image ? (
-                <img
-                  className="h-full w-full object-cover"
-                  src={item.image}
-                />
-              ) : (
-                <video
-                  className="h-full w-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  src={item.video}
-                ></video>
-              )}
-            </div>
-          );
-        })}
+   <div className="images-section relative w-full h-[70vh] sm:h-[180vh] overflow-hidden flex items-center justify-center">
+  {/* Section Title */}
+  <div className="absolute top-10 left-1/2 -translate-x-1/2 text-center z-10">
+    <h2 className="text-3xl sm:text-5xl font-bold text-black tracking-tight">
+      Featured Work
+    </h2>
+    <p className="text-sm sm:text-lg text-gray-700 mt-2">
+      A glimpse of my projects, blending design & development
+    </p>
+  </div>
 
-        <img
-          className="h-full w-full object-cover"
-          src="https://a.storyblok.com/f/133769/748x1278/5784aa7150/home-news-1.jpg/m/550x940/filters:format(webp):quality(70)"
-          alt=""
-        />
-      </div>
-    </div>
+  <div className="relative w-1/3 sm:w-1/4 h-1/2">
+    {position.map((item, index) => {
+      return (
+        <div
+          className={`images absolute ${item.height} ${item.width} ${item.top} ${item.right}`}
+          id={index}
+          key={index}
+        >
+          {item.image ? (
+            <div className="relative h-full w-full">
+              <img
+                className="h-full w-full object-cover rounded-lg shadow-lg"
+                src={item.image}
+              />
+              {/* Small Caption */}
+              <span className="absolute bottom-2 left-2 text-xs bg-black/60 text-white px-2 py-1 rounded">
+                Project {index + 1}
+              </span>
+            </div>
+          ) : (
+            <div className="relative h-full w-full">
+              <video
+                className="h-full w-full object-cover rounded-lg shadow-lg"
+                autoPlay
+                muted
+                loop
+                src={item.video}
+              ></video>
+              {/* Small Caption */}
+              <span className="absolute bottom-2 left-2 text-xs bg-black/60 text-white px-2 py-1 rounded">
+                Demo {index + 1}
+              </span>
+            </div>
+          )}
+        </div>
+      );
+    })}
+
+    <img
+      className="h-full w-full object-cover rounded-xl"
+      src="https://a.storyblok.com/f/133769/748x1278/5784aa7150/home-news-1.jpg/m/550x940/filters:format(webp):quality(70)"
+      alt=""
+    />
+  </div>
+</div>
+
   );
 };
 

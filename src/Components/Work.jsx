@@ -39,7 +39,7 @@ const Work = () => {
   ];
 
   return (
-    <div className="max-w-screen-2xl mx-auto px-5 sm:px-52 py-20">
+    <div id="work" className="max-w-screen-2xl mx-auto px-5 sm:px-52 py-20">
       <div className="featured flex items-center gap-3">
         <svg
           className="size-3 sm:size-7"

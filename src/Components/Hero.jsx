@@ -1,5 +1,5 @@
 import gsap, { ScrollTrigger } from "gsap/all";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
 import Overflow from "./Overflow";
 
 const Hero = () => {
@@ -8,6 +8,7 @@ const Hero = () => {
   
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
     gsap.to(".scroll-down", {
       scrollTrigger: {
         trigger: ".scroll-down",
@@ -33,27 +34,31 @@ const Hero = () => {
 
   return (
     <div className="main relative w-full h-[150vh] sm:h-[270vh]">
+      {/* Scroll indicator */}
       <span className="absolute scroll-down hidden sm:block z-[2] right-[10vh] top-[87vh] text-white text-sm">
         Scroll to explore
       </span>
+
+      {/* Background Image */}
       <div className="picture w-full h-full overflow-hidden bg-black">
         <img
-          data-scroll
-          data-scroll-speed="-1"
           className="w-full h-full object-cover"
           src="https://a.storyblok.com/f/133769/1920x2716/5c24d6b467/exo-ape-hero-1.jpg/m/1920x2716/filters:format(webp):quality(70)"
-          alt=""
+          alt="portfolio background"
         />
       </div>
 
+      {/* Content */}
       <div className="absolute w-full top-0 left-0">
         <div className="text text-white max-w-screen-2xl mx-auto h-full px-5 sm:px-32">
+          
+          {/* Intro */}
           <div className="para mt-72 sm:mt-96">
             {[
-              " Global digital design studio partnering ",
-              "with brands and businesses that create ",
-              "exceptional experiences where people ",
-              "live, work, and unwind. ",
+              " Hi, I'm Pradeep Singh — a passionate ",
+              "Frontend Developer crafting engaging ",
+              "digital experiences with modern web ",
+              "technologies and creative design. ",
             ].map((item) => (
               <p
                 className="font-medium overflow-hidden text-lg sm:text-2xl leading-[1.5rem]"
@@ -64,8 +69,9 @@ const Hero = () => {
             ))}
           </div>
 
+          {/* Hero Heading */}
           <div className="headings mt-5 sm:mt-10">
-            {["Digital", "Design", "Experience"].map((item) => (
+            {["Creative", "Web", "Developer"].map((item) => (
               <h1
                 className="text-5xl overflow-hidden sm:text-[15rem] sm:tracking-tighter tracking-tight leading-none"
                 key={item}
@@ -75,6 +81,7 @@ const Hero = () => {
             ))}
           </div>
 
+          {/* Mobile Scroll Indicator */}
           <div className="scroll-down mt-10 sm:hidden">
             <svg
               className="size-4 rotate-90"
@@ -89,23 +96,26 @@ const Hero = () => {
             </svg>
           </div>
 
+          {/* Bottom Section */}
           <div className="mt-20 sm:mt-32">
             <p className="font-medium text-lg sm:text-2xl sm:w-1/2 leading-[1.5rem]">
-              We help experience-driven companies thrive by making their
-              audience feel the refined intricacies of their brand and product
-              in the digital space. Unforgettable journeys start with a click.
+              I design and develop responsive, user-friendly websites that 
+              transform ideas into interactive digital experiences.  
+              Let's build something amazing together.
             </p>
-            <div className="flex justify-between items-center mt-5 sm:mt-20">
-              <a className="border-b sm:text-lg border-white inline-block" href="#" > The Studio </a>
 
+            <div className="flex justify-between items-center mt-5 sm:mt-20">
+              <a className="border-b sm:text-lg border-white inline-block" href="#projects"> View My Work </a>
+
+              {/* Right side quick links */}
               <div className="flex gap-32 max-sm:hidden">
                 <div className="space-y-3">
-                  {["Work", "Studio", "News", "Contact"].map(item => {
+                  {["Work", "About", "Skills", "Contact"].map(item => {
                     return (
                       <a
                         key={item}
                         className="block text-sm opacity-85 capitalize"
-                        href="#"
+                        href={`#${item.toLowerCase()}`}
                       >
                         {item}
                       </a>
@@ -113,7 +123,7 @@ const Hero = () => {
                   })}
                 </div>
                 <div className="space-y-3">
-                  {["pratik18rathore@gmail.com", "+91 98 2683 9328"].map(item => {
+                  {["pradeepsingh@gmail.com", "+91 98765 43210"].map(item => {
                     return (
                       <a key={item} className="block text-sm opacity-85" href="#" > 
                       {item}

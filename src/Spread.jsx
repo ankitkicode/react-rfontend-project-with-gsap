@@ -4,6 +4,7 @@ const Spread = () => {
   return (
     <div data-scroll data-scroll-speed="0.2" className="w-full">
       <div className="max-w-screen-2xl flex flex-col items-center">
+        {/* Small Badge */}
         <div className="flex items-center gap-3">
           <svg
             className="size-4"
@@ -16,14 +17,25 @@ const Spread = () => {
               fill="currentColor"
             ></path>
           </svg>
-          <h2 className="text-sm">In the media</h2>
+          <h2 className="text-sm">Portfolio Highlights</h2>
         </div>
 
+        {/* Main Text */}
         <div className="text text-center mt-7 pb-24">
-            <h1 className="text-6xl sm:text-[9rem] tracking-tighter">Spread</h1>
-            <h1 className="text-6xl sm:text-[9rem] tracking-tighter">the News</h1>
-            <p className="text-lg sm:text-2xl sm:mt-10 mt-6 leading-[1.5rem] w-2/3 mx-auto">Find out more about our work on these leading design and technology platforms.</p>
-            <a className="border-b border-b-zinc-400 mt-5 sm:mt-10 inline-block" href="#">Browse all news</a>
+          <h1 className="text-6xl sm:text-[9rem] tracking-tighter">Showcasing</h1>
+          <h1 className="text-6xl sm:text-[9rem] tracking-tighter">My Work</h1>
+          <p className="text-lg sm:text-2xl sm:mt-10 mt-6 leading-[1.5rem] w-2/3 mx-auto">
+            Explore my journey as a <span className="font-semibold">MERN Stack Developer</span>.  
+            From full-stack web apps to creative UI animations — here are some highlights of my work.
+          </p>
+
+          {/* Call to Action */}
+          <a 
+            className="border-b border-b-zinc-400 mt-5 sm:mt-10 inline-block hover:text-blue-400 transition-colors" 
+            href="#projects"
+          >
+            View My Projects
+          </a>
         </div>
       </div>
     </div>

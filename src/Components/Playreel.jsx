@@ -24,10 +24,8 @@ const Playreel = () => {
     }, "<")
   }, [])
 
-  
-  
   return (
-    <div className="play-reel overflow-hidden relative w-full h-screen  bg-black">
+    <div className="play-reel overflow-hidden relative w-full h-screen bg-black">
       <div className="video-div w-48 sm:w-80 sm:h-44 h-28 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="absolute h-full w-full bg-black/70 scale-[1.01]">
           <svg
@@ -36,16 +34,8 @@ const Playreel = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <circle
-              cx="43"
-              cy="43"
-              r="41"
-              stroke="currentColor"
-            ></circle>
-            <path
-              d="M41 38V48L49.1818 43L41 38Z"
-              fill="currentColor"
-            ></path>
+            <circle cx="43" cy="43" r="41" stroke="currentColor"></circle>
+            <path d="M41 38V48L49.1818 43L41 38Z" fill="currentColor"></path>
           </svg>
         </div>
         <video
@@ -58,6 +48,7 @@ const Playreel = () => {
       </div>
 
       <div className="overlay absolute flex flex-col justify-between w-full h-full text-white py-20">
+        {/* Top label */}
         <div className="flex items-center justify-center gap-2">
           <svg
             className="size-3"
@@ -70,17 +61,19 @@ const Playreel = () => {
               fill="currentColor"
             ></path>
           </svg>
-          <h2 className="text-sm">Work in motion</h2>
+          <h2 className="text-sm">My Coding Journey</h2>
         </div>
 
+        {/* Main heading */}
         <h2 className="w-full flex items-center justify-center gap-32 sm:gap-[42%]">
-          <div className="text-6xl sm:text-9xl">Play</div>
+          <div className="text-6xl sm:text-9xl">Dev</div>
           <div className="text-6xl sm:text-9xl">Reel</div>
         </h2>
 
+        {/* Footer text */}
         <p className="text-center text-sm">
-          Our work is best experienced in motion. Don’t <br /> forget to put on your
-          headphones.
+          A glimpse into my world as a MERN Stack Developer. <br />  
+          Building modern web apps with clean code & smooth experiences.
         </p>
       </div>
     </div>
